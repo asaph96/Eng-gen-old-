@@ -47,7 +47,7 @@ class Enggen(object):
     def sequencia(self):
         for i in range(len(self.__seq)):
             self.__sequp.append(self.__seq[i])
-            i-=i
+            i -= i
         return self.__sequp
 
     def sepcodons(self):
@@ -58,7 +58,8 @@ class Enggen(object):
             self.__a = [a1, b1, c1]
             self.__z = list(zip(*self.__a))
             for i in range(len(self.__z)):
-                self.__z[i] = str(self.__z[i][0] + self.__z[i][1] + self.__z[i][2])
+                self.__z[i] = str(self.__z[i][0] + self.__z[i]
+                                  [1] + self.__z[i][2])
                 i -= i
 
         if self.__frame == 2:
@@ -68,7 +69,8 @@ class Enggen(object):
             self.__a = [a1, b1, c1]
             self.__z = list(zip(*self.__a))
             for i in range(len(self.__z)):
-                self.__z[i] = str(self.__z[i][0] + self.__z[i][1] + self.__z[i][2])
+                self.__z[i] = str(self.__z[i][0] + self.__z[i]
+                                  [1] + self.__z[i][2])
                 i -= i
 
         if self.__frame == 3:
@@ -78,11 +80,11 @@ class Enggen(object):
             self.__a = [a1, b1, c1]
             self.__z = list(zip(*self.__a))
             for i in range(len(self.__z)):
-                self.__z[i] = str(self.__z[i][0] + self.__z[i][1] + self.__z[i][2])
+                self.__z[i] = str(self.__z[i][0] + self.__z[i]
+                                  [1] + self.__z[i][2])
                 i -= i
 
         return self.__z
-
 
     def traduzir_codons(self):
 
@@ -191,15 +193,17 @@ class Enggen(object):
                 self.__dpl2.append('C')
             elif self.__dpl1[i] == 'C':
                 self.__dpl2.append('G')
-            i-=i
-        x = '{}\n{}\n{}\n{}'.format(''.join(self.__dpl1),('|'*len(self.__dpl1)),('|' *len(self.__dpl1)), ''.join(self.__dpl2))
+            i -= i
+        x = '{}\n{}\n{}\n{}'.format(''.join(
+            self.__dpl1), ('|'*len(self.__dpl1)), ('|' * len(self.__dpl1)), ''.join(self.__dpl2))
         return x
+
 
 if __name__ == '__main__':
     seq = 'ATGCTAGGTAACAAGCGACTGGGGCTGTCCGGACTGACCCTCGCCCTGTCCCTGCTCGTGTGCCTGGGTGCGCTGGCCGAGGCGTACCCCTCCAAGCCGGACAACCCGGGCGAGGACGCACCAGCGGAGGACATGGCCAGATACTACTCGGCGCTGCGACACTACATCAACCTCATCACCAGGCAGAGATATGGAAAACGATCCAGCCCAGAGACACTGATTTCAGACCTCTTGATGAGAGAAAGCACAGAAAATGTTCCCAGAACTCGGCTTGAAGACCCTGCAATGTGGTGATGGGAAATGAGACTTGCTCTCTGGCCTTTTCCTATTTT'
-    f1 = Enggen(seq,1,1)
-    f2 = Enggen(seq,2,1)
-    f3 = Enggen(seq,3,1)
+    f1 = Enggen(seq, 1, 1)
+    f2 = Enggen(seq, 2, 1)
+    f3 = Enggen(seq, 3, 1)
     f1.transcricao()
     f2.transcricao()
     f3.transcricao()
@@ -218,4 +222,3 @@ if __name__ == '__main__':
     print(' '.join(res3))
     print(x)
     print(f1.print_dupla_fita())
-    
